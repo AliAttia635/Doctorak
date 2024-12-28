@@ -1,24 +1,19 @@
 import 'package:doctor_app/core/helpers/spacing.dart';
-import 'package:doctor_app/core/shared_widgets/custom_button.dart';
-import 'package:doctor_app/core/shared_widgets/custom_text_form_field.dart';
+import 'package:doctor_app/core/shared_widgets/custom_text_button.dart';
 import 'package:doctor_app/core/themes/app_colors.dart';
 import 'package:doctor_app/core/themes/styles.dart';
+import 'package:doctor_app/features/login/data/models/login_request_body.dart';
+import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/presentation/widgets/already_have_account.dart';
+import 'package:doctor_app/features/login/presentation/widgets/email_and_password.dart';
+import 'package:doctor_app/features/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:doctor_app/features/login/presentation/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginView extends StatefulWidget {
+class LoginView extends StatelessWidget {
   const LoginView({super.key});
-
-  @override
-  State<LoginView> createState() => _LoginViewState();
-}
-
-class _LoginViewState extends State<LoginView> {
-  GlobalKey<FormState> formKey = GlobalKey();
-
-  bool isObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -42,59 +37,48 @@ class _LoginViewState extends State<LoginView> {
                   style: Styles.font14greyRegular,
                 ),
                 verticalSpace(36),
-                Form(
-                  key: formKey,
-                  child: Column(
-                    children: [
-                      const CustomTextFormField(
-                        hintText: "Email",
+                const EmailAndPassword(),
+                Column(
+                  children: [
+                    verticalSpace(30),
+                    Align(
+                      alignment: AlignmentDirectional.centerEnd,
+                      child: Text(
+                        "Forgot Password?",
+                        style: Styles.font13blueRegular,
                       ),
-                      verticalSpace(8),
-                      CustomTextFormField(
-                        hintText: "Password",
-                        isObscureText: isObscureText,
-                        suffixIcon: GestureDetector(
-                          onTap: () {
-                            setState(
-                              () {
-                                isObscureText = !isObscureText;
-                              },
-                            );
-                          },
-                          child: Icon(
-                            isObscureText
-                                ? Icons.visibility_off
-                                : Icons.visibility,
-                          ),
-                        ),
-                      ),
-                      verticalSpace(30),
-                      Align(
-                        alignment: AlignmentDirectional.centerEnd,
-                        child: Text(
-                          "Forgot Password?",
-                          style: Styles.font13blueRegular,
-                        ),
-                      ),
-                      verticalSpace(40),
-                      CustomTextButton(
-                        buttonText: "Login",
-                        onPressed: () {},
-                        textStyle: Styles.font16whitesemiBold,
-                        horizontalPadding: 1,
-                      ),
-                    ],
-                  ),
+                    ),
+                    verticalSpace(40),
+                    CustomTextButton(
+                      buttonText: "Login",
+                      onPressed: () {
+                        validateThenDoLogin(context);
+                      },
+                      textStyle: Styles.font16whitesemiBold,
+                      horizontalPadding: 1,
+                    ),
+                  ],
                 ),
                 verticalSpace(30),
                 const TermsAndConditions(),
                 verticalSpace(30),
                 const Center(child: AlreadyHaveAccount()),
+                const LoginBlocListener()
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().doLogin(
+            LoginRequestBody(
+                email: context.read<LoginCubit>().emailController.text,
+                password: context.read<LoginCubit>().passwordController.text),
+          );
+    }
   }
 }
