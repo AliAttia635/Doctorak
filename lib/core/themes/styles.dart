@@ -57,4 +57,14 @@ class Styles {
     color: Colors.white,
     fontWeight: FontWeight.w600,
   );
+
+  static TextStyle font15BlackMeduim = TextStyle(
+      fontSize: 15.sp,
+      color: Colors.black,
+      fontWeight: FontWeightHelper.medium);
+
+  static TextStyle font14BlueSemiBold = TextStyle(
+      fontSize: 14.sp,
+      color: Colors.blue,
+      fontWeight: FontWeightHelper.semiBold);
 }

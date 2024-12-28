@@ -1,5 +1,5 @@
 import 'package:doctor_app/core/routing/routes.dart';
-import 'package:doctor_app/core/shared_widgets/custom_button.dart';
+import 'package:doctor_app/core/shared_widgets/custom_text_button.dart';
 import 'package:doctor_app/core/themes/styles.dart';
 import 'package:doctor_app/features/onboarding/presentation/widgets/doctor_image.dart';
 import 'package:doctor_app/features/onboarding/presentation/widgets/logo_and_name.dart';
@@ -40,7 +40,7 @@ class OnboaringView extends StatelessWidget {
                         buttonText: 'Get Started',
                         textStyle: Styles.font16whitesemiBold,
                         onPressed: () {
-                          GoRouter.of(context).push(Routes.loginView);
+                          GoRouter.of(context).push(Routes.loginScreen);
                         },
                       ),
                     ],
