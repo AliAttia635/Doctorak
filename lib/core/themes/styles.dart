@@ -10,6 +10,12 @@ class Styles {
     fontWeight: FontWeightHelper.bold,
   );
 
+  static TextStyle font24PrimaryColorBold = TextStyle(
+    fontSize: 24.sp,
+    color: AppColors.primaryColor,
+    fontWeight: FontWeightHelper.bold,
+  );
+
   static TextStyle font32Blue700Weight = TextStyle(
     fontSize: 32.sp,
     color: AppColors.primaryColor,

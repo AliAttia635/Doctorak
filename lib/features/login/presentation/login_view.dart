@@ -25,12 +25,7 @@ class LoginView extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Welcome Back",
-                  style: Styles.font24BlackBold.copyWith(
-                    color: AppColors.primaryColor,
-                  ),
-                ),
+                Text("Welcome Back", style: Styles.font24PrimaryColorBold),
                 verticalSpace(8),
                 Text(
                   "We're excited to have you back, can't wait to see what you've been up to since you last logged in.",
