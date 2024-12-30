@@ -41,38 +41,10 @@ class CustomTextFormField extends StatelessWidget {
         isDense: true,
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
-        focusedBorder: focusedBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: const BorderSide(
-                color: AppColors.primaryColor,
-                width: 1.3,
-              ),
-            ),
-        enabledBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: const BorderSide(
-                color: AppColors.lighterGrey,
-                width: 1.3,
-              ),
-            ),
-        errorBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: const BorderSide(
-                color: Colors.red,
-                width: 1.3,
-              ),
-            ),
-        focusedErrorBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
-              borderSide: const BorderSide(
-                color: Colors.red,
-                width: 1.3,
-              ),
-            ),
+        focusedBorder: focusedBorder ?? buildFocuedBorder(),
+        enabledBorder: enabledBorder ?? buildEnabledBorder(),
+        errorBorder: buildErrorBorder(),
+        focusedErrorBorder: buildFocusedErrorBorder(),
         hintStyle: hintStyle ?? Styles.font14LightgreyRegular,
         hintText: hintText,
         suffixIcon: suffixIcon,
@@ -85,4 +57,44 @@ class CustomTextFormField extends StatelessWidget {
       autovalidateMode: autovalidateMode ?? AutovalidateMode.onUserInteraction,
     );
   }
+}
+
+OutlineInputBorder buildFocusedErrorBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: const BorderSide(
+      color: Colors.red,
+      width: 1.3,
+    ),
+  );
+}
+
+OutlineInputBorder buildErrorBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: const BorderSide(
+      color: Colors.red,
+      width: 1.3,
+    ),
+  );
+}
+
+OutlineInputBorder buildEnabledBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: const BorderSide(
+      color: AppColors.lighterGrey,
+      width: 1.3,
+    ),
+  );
+}
+
+OutlineInputBorder buildFocuedBorder() {
+  return OutlineInputBorder(
+    borderRadius: BorderRadius.circular(16),
+    borderSide: const BorderSide(
+      color: AppColors.primaryColor,
+      width: 1.3,
+    ),
+  );
 }
