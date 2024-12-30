@@ -4,8 +4,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class AlreadyHaveAccount extends StatelessWidget {
-  const AlreadyHaveAccount({
+class DontHaveAccount extends StatelessWidget {
+  const DontHaveAccount({
     super.key,
   });
 
@@ -16,7 +16,7 @@ class AlreadyHaveAccount extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-            text: "Already have an account? ",
+            text: "Don't Have an Account? ",
             style: Styles.font13LightblackMeduim,
           ),
           TextSpan(

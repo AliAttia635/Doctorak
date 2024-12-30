@@ -1,6 +1,9 @@
+import 'package:doctor_app/core/helpers/app_regex.dart';
 import 'package:doctor_app/core/shared_widgets/custom_text_form_field.dart';
 import 'package:doctor_app/core/themes/styles.dart';
+import 'package:doctor_app/features/signup/logic/signup_cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
 class SignUpIntlPhoneField extends StatelessWidget {
@@ -11,6 +14,7 @@ class SignUpIntlPhoneField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IntlPhoneField(
+      controller: context.read<SignupCubit>().phoneController,
       keyboardType: TextInputType.phone,
       decoration: InputDecoration(
         hintText: 'Phone Number',
@@ -21,7 +25,13 @@ class SignUpIntlPhoneField extends StatelessWidget {
         focusedErrorBorder: buildFocuedBorder(),
       ),
       initialCountryCode: 'EG',
-      validator: (data) {},
+      validator: (value) {
+        if (value == null ||
+            value.toString().isEmpty ||
+            !AppRegex.isPhoneNumberValid(value.toString())) {
+          return "please enter a valid phone number";
+        }
+      },
     );
   }
 }

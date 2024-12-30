@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:doctor_app/core/networking/api_constants.dart';
 import 'package:doctor_app/features/login/data/models/login_request_body.dart';
 import 'package:doctor_app/features/login/data/models/login_response_body.dart';
-import 'package:doctor_app/features/signup/data/models/signup_request_body.dart';
+import 'package:doctor_app/features/signup/data/models/sign_up_request_body.dart';
 import 'package:doctor_app/features/signup/data/models/signup_response_body.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';

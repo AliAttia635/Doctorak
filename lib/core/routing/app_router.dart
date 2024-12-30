@@ -6,6 +6,8 @@ import 'package:doctor_app/features/login/data/repos/login_repo_implementation.d
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
 import 'package:doctor_app/features/login/presentation/login_view.dart';
 import 'package:doctor_app/features/onboarding/presentation/onboaring_view.dart';
+import 'package:doctor_app/features/signup/data/repos/signup_repo_implementation.dart';
+import 'package:doctor_app/features/signup/logic/signup_cubit/signup_cubit.dart';
 import 'package:doctor_app/features/signup/presentation/signup_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -31,7 +33,10 @@ class AppRouter {
       GoRoute(
         path: Routes.signupScreen,
         builder: (context, state) {
-          return const SignupView();
+          return BlocProvider(
+            create: (context) => SignupCubit(getit<SignupRepoImplementation>()),
+            child: const SignupView(),
+          );
         },
       ),
       GoRoute(
