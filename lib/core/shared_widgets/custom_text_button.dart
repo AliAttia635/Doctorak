@@ -1,5 +1,5 @@
-import 'package:doctor_app/core/themes/app_colors.dart';
-import 'package:doctor_app/core/themes/styles.dart';
+import 'package:docdoc_1/core/themes/app_colors.dart';
+import 'package:docdoc_1/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -36,17 +36,16 @@ class CustomTextButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRaduis ?? 16),
         ),
         backgroundColor: backgroundColor ?? AppColors.primaryColor,
-        fixedSize:
-            Size(buttonWidth?.w ?? double.maxFinite, buttonHeight?.h ?? 52.h),
+        fixedSize: Size(
+          buttonWidth?.w ?? double.maxFinite,
+          buttonHeight?.h ?? 52.h,
+        ),
         padding: EdgeInsets.symmetric(
           horizontal: horizontalPadding?.w ?? 12.w,
           vertical: verticalPadding?.h ?? 14.h,
         ),
       ),
-      child: Text(
-        buttonText,
-        style: Styles.font16whitesemiBold,
-      ),
+      child: Text(buttonText, style: Styles.font16whitesemiBold),
     );
   }
 }

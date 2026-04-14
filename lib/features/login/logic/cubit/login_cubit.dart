@@ -1,6 +1,7 @@
-import 'package:doctor_app/features/login/data/models/login_request_body.dart';
-import 'package:doctor_app/features/login/data/repos/login_repo.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_state.dart';
+
+import 'package:docdoc_1/features/login/data/models/login_request_body.dart';
+import 'package:docdoc_1/features/login/data/repos/login_repo.dart';
+import 'package:docdoc_1/features/login/logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

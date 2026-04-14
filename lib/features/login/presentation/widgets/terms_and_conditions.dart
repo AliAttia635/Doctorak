@@ -1,4 +1,4 @@
-import 'package:doctor_app/core/themes/styles.dart';
+import 'package:docdoc_1/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

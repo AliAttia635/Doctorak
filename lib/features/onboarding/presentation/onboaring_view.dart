@@ -1,8 +1,8 @@
-import 'package:doctor_app/core/routing/routes.dart';
-import 'package:doctor_app/core/shared_widgets/custom_text_button.dart';
-import 'package:doctor_app/core/themes/styles.dart';
-import 'package:doctor_app/features/onboarding/presentation/widgets/doctor_image.dart';
-import 'package:doctor_app/features/onboarding/presentation/widgets/logo_and_name.dart';
+import 'package:docdoc_1/core/routing/routes.dart';
+import 'package:docdoc_1/core/shared_widgets/custom_text_button.dart';
+import 'package:docdoc_1/core/themes/styles.dart';
+import 'package:docdoc_1/features/onboarding/presentation/widgets/doctor_image.dart';
+import 'package:docdoc_1/features/onboarding/presentation/widgets/logo_and_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -20,9 +20,7 @@ class OnboaringView extends StatelessWidget {
             child: Column(
               children: [
                 const LogoAndName(),
-                SizedBox(
-                  height: 30.h,
-                ),
+                SizedBox(height: 30.h),
                 const DoctorImageAndText(),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 32.0.w),
@@ -33,9 +31,7 @@ class OnboaringView extends StatelessWidget {
                         style: Styles.font14greyRegular,
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(
-                        height: 15.w,
-                      ),
+                      SizedBox(height: 15.w),
                       CustomTextButton(
                         buttonText: 'Get Started',
                         textStyle: Styles.font16whitesemiBold,
@@ -45,7 +41,7 @@ class OnboaringView extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

@@ -1,5 +1,6 @@
-import 'package:doctor_app/core/routing/routes.dart';
-import 'package:doctor_app/core/themes/styles.dart';
+
+import 'package:docdoc_1/core/routing/routes.dart';
+import 'package:docdoc_1/core/themes/styles.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
