@@ -1,4 +1,4 @@
-import 'package:doctor_app/features/signup/presentation/widgets/signup_view_body.dart';
+import 'package:docdoc_1/features/signup/presentation/widgets/signup_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SignupView extends StatelessWidget {
@@ -6,8 +6,6 @@ class SignupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SignupViewBody(),
-    );
+    return const Scaffold(body: SignupViewBody());
   }
 }

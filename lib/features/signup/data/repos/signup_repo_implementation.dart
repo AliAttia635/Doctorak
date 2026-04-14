@@ -1,9 +1,9 @@
-import 'package:doctor_app/core/networking/api_error_handler.dart';
-import 'package:doctor_app/core/networking/api_result.dart';
-import 'package:doctor_app/core/networking/api_service.dart';
-import 'package:doctor_app/features/signup/data/models/sign_up_request_body.dart';
-import 'package:doctor_app/features/signup/data/models/signup_response_body.dart';
-import 'package:doctor_app/features/signup/data/repos/signup_repo.dart';
+import 'package:docdoc_1/core/networking/api_error_handler.dart';
+import 'package:docdoc_1/core/networking/api_result.dart';
+import 'package:docdoc_1/core/networking/api_service.dart';
+import 'package:docdoc_1/features/signup/data/models/sign_up_request_body.dart';
+import 'package:docdoc_1/features/signup/data/models/signup_response_body.dart';
+import 'package:docdoc_1/features/signup/data/repos/signup_repo.dart';
 
 class SignupRepoImplementation implements SignupRepo {
   final ApiService _apiService;

@@ -1,5 +1,5 @@
-import 'package:doctor_app/core/routing/app_router.dart';
-import 'package:doctor_app/core/themes/app_colors.dart';
+import 'package:docdoc_1/core/routing/app_router.dart';
+import 'package:docdoc_1/core/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,8 +16,9 @@ class DocDocApp extends StatelessWidget {
         routerConfig: AppRouter.router,
         title: "DocDoc App",
         theme: ThemeData(
-            primaryColor: AppColors.primaryColor,
-            scaffoldBackgroundColor: Colors.white),
+          primaryColor: AppColors.primaryColor,
+          scaffoldBackgroundColor: Colors.white,
+        ),
       ),
     );
   }

@@ -1,5 +1,5 @@
-import 'package:doctor_app/core/themes/app_colors.dart';
-import 'package:doctor_app/core/themes/styles.dart';
+import 'package:docdoc_1/core/themes/app_colors.dart';
+import 'package:docdoc_1/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,7 +39,8 @@ class CustomTextFormField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         isDense: true,
-        contentPadding: contentPadding ??
+        contentPadding:
+            contentPadding ??
             EdgeInsets.symmetric(vertical: 18.h, horizontal: 20.w),
         focusedBorder: focusedBorder ?? buildFocuedBorder(),
         enabledBorder: enabledBorder ?? buildEnabledBorder(),
@@ -62,39 +63,27 @@ class CustomTextFormField extends StatelessWidget {
 OutlineInputBorder buildFocusedErrorBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(
-      color: Colors.red,
-      width: 1.3,
-    ),
+    borderSide: const BorderSide(color: Colors.red, width: 1.3),
   );
 }
 
 OutlineInputBorder buildErrorBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(
-      color: Colors.red,
-      width: 1.3,
-    ),
+    borderSide: const BorderSide(color: Colors.red, width: 1.3),
   );
 }
 
 OutlineInputBorder buildEnabledBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(
-      color: AppColors.lighterGrey,
-      width: 1.3,
-    ),
+    borderSide: const BorderSide(color: AppColors.lighterGrey, width: 1.3),
   );
 }
 
 OutlineInputBorder buildFocuedBorder() {
   return OutlineInputBorder(
     borderRadius: BorderRadius.circular(16),
-    borderSide: const BorderSide(
-      color: AppColors.primaryColor,
-      width: 1.3,
-    ),
+    borderSide: const BorderSide(color: AppColors.primaryColor, width: 1.3),
   );
 }

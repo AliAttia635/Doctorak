@@ -1,4 +1,4 @@
-import 'package:doctor_app/core/themes/styles.dart';
+import 'package:docdoc_1/core/themes/styles.dart';
 import 'package:flutter/material.dart';
 
 void showErrorAlterDialog(BuildContext context, String error) {
@@ -6,14 +6,8 @@ void showErrorAlterDialog(BuildContext context, String error) {
     context: context,
     builder: (context) {
       return AlertDialog(
-        icon: const Icon(
-          Icons.error,
-          color: Colors.red,
-        ),
-        content: Text(
-          error,
-          style: Styles.font15BlackMeduim,
-        ),
+        icon: const Icon(Icons.error, color: Colors.red),
+        content: Text(error, style: Styles.font15BlackMeduim),
         actions: [
           TextButton(
             onPressed: () {
@@ -21,11 +15,8 @@ void showErrorAlterDialog(BuildContext context, String error) {
               //to exit the loading state in signup
               // Navigator.pop(context);
             },
-            child: Text(
-              "Got it",
-              style: Styles.font14BlueSemiBold,
-            ),
-          )
+            child: Text("Got it", style: Styles.font14BlueSemiBold),
+          ),
         ],
       );
     },

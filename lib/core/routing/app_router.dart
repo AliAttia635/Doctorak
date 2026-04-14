@@ -1,14 +1,14 @@
-import 'package:doctor_app/core/di/dependency_injection.dart';
-import 'package:doctor_app/core/routing/routes.dart';
-import 'package:doctor_app/features/home/presentation/views/home_view.dart';
-import 'package:doctor_app/features/login/data/repos/login_repo.dart';
-import 'package:doctor_app/features/login/data/repos/login_repo_implementation.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/presentation/login_view.dart';
-import 'package:doctor_app/features/onboarding/presentation/onboaring_view.dart';
-import 'package:doctor_app/features/signup/data/repos/signup_repo_implementation.dart';
-import 'package:doctor_app/features/signup/logic/signup_cubit/signup_cubit.dart';
-import 'package:doctor_app/features/signup/presentation/signup_view.dart';
+import 'package:docdoc_1/core/di/dependency_injection.dart';
+import 'package:docdoc_1/core/routing/routes.dart';
+import 'package:docdoc_1/features/home/presentation/views/home_view.dart';
+import 'package:docdoc_1/features/login/data/repos/login_repo.dart';
+import 'package:docdoc_1/features/login/data/repos/login_repo_implementation.dart';
+import 'package:docdoc_1/features/login/logic/cubit/login_cubit.dart';
+import 'package:docdoc_1/features/login/presentation/login_view.dart';
+import 'package:docdoc_1/features/onboarding/presentation/onboaring_view.dart';
+import 'package:docdoc_1/features/signup/data/repos/signup_repo_implementation.dart';
+import 'package:docdoc_1/features/signup/logic/signup_cubit/signup_cubit.dart';
+import 'package:docdoc_1/features/signup/presentation/signup_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 

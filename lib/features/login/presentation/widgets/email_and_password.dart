@@ -1,8 +1,9 @@
-import 'package:doctor_app/core/helpers/app_regex.dart';
-import 'package:doctor_app/core/helpers/spacing.dart';
-import 'package:doctor_app/core/shared_widgets/custom_text_form_field.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/core/shared_widgets/password_validation.dart';
+
+import 'package:docdoc_1/core/helpers/app_regex.dart';
+import 'package:docdoc_1/core/helpers/spacing.dart';
+import 'package:docdoc_1/core/shared_widgets/custom_text_form_field.dart';
+import 'package:docdoc_1/core/shared_widgets/password_validation.dart';
+import 'package:docdoc_1/features/login/logic/cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

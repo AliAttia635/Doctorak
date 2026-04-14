@@ -1,13 +1,11 @@
-import 'package:doctor_app/core/helpers/spacing.dart';
-import 'package:doctor_app/core/shared_widgets/custom_text_button.dart';
-import 'package:doctor_app/core/themes/app_colors.dart';
-import 'package:doctor_app/core/themes/styles.dart';
-import 'package:doctor_app/features/login/data/models/login_request_body.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/presentation/widgets/dont_have_account.dart';
-import 'package:doctor_app/features/login/presentation/widgets/email_and_password.dart';
-import 'package:doctor_app/features/login/presentation/widgets/login_bloc_listener.dart';
-import 'package:doctor_app/features/login/presentation/widgets/terms_and_conditions.dart';
+import 'package:docdoc_1/core/helpers/spacing.dart';
+import 'package:docdoc_1/core/shared_widgets/custom_text_button.dart';
+import 'package:docdoc_1/core/themes/styles.dart';
+import 'package:docdoc_1/features/login/logic/cubit/login_cubit.dart';
+import 'package:docdoc_1/features/login/presentation/widgets/dont_have_account.dart';
+import 'package:docdoc_1/features/login/presentation/widgets/email_and_password.dart';
+import 'package:docdoc_1/features/login/presentation/widgets/login_bloc_listener.dart';
+import 'package:docdoc_1/features/login/presentation/widgets/terms_and_conditions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -58,7 +56,7 @@ class LoginView extends StatelessWidget {
                 const TermsAndConditions(),
                 verticalSpace(30),
                 const Center(child: DontHaveAccount()),
-                const LoginBlocListener()
+                const LoginBlocListener(),
               ],
             ),
           ),
@@ -70,10 +68,10 @@ class LoginView extends StatelessWidget {
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
       context.read<LoginCubit>().doLogin(
-          // LoginRequestBody(
-          //     email: context.read<LoginCubit>().emailController.text,
-          //     password: context.read<LoginCubit>().passwordController.text),
-          );
+        // LoginRequestBody(
+        //     email: context.read<LoginCubit>().emailController.text,
+        //     password: context.read<LoginCubit>().passwordController.text),
+      );
     }
   }
 }

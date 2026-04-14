@@ -1,9 +1,9 @@
-import 'package:doctor_app/core/helpers/show_error_alter_dialog.dart';
-import 'package:doctor_app/core/helpers/show_loading_indicator.dart';
-import 'package:doctor_app/core/routing/routes.dart';
-import 'package:doctor_app/core/themes/styles.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/logic/cubit/login_state.dart';
+
+import 'package:docdoc_1/core/helpers/show_error_alter_dialog.dart';
+import 'package:docdoc_1/core/helpers/show_loading_indicator.dart';
+import 'package:docdoc_1/core/routing/routes.dart';
+import 'package:docdoc_1/features/login/logic/cubit/login_cubit.dart';
+import 'package:docdoc_1/features/login/logic/cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
