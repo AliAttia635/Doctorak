@@ -10,6 +10,18 @@ class Styles {
     fontWeight: FontWeightHelper.bold,
   );
 
+  static TextStyle font12GreyBold = TextStyle(
+    fontSize: 12.sp,
+    color: Colors.grey,
+    fontWeight: FontWeightHelper.regular,
+  );
+
+  static TextStyle font18LightBlackBold = TextStyle(
+    fontSize: 18.sp,
+    color: AppColors.lightBlack,
+    fontWeight: FontWeightHelper.bold,
+  );
+
   static TextStyle font24PrimaryColorBold = TextStyle(
     fontSize: 24.sp,
     color: AppColors.primaryColor,
