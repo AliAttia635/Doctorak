@@ -42,10 +42,10 @@ class CustomTextButton extends StatelessWidget {
         ),
         padding: EdgeInsets.symmetric(
           horizontal: horizontalPadding?.w ?? 12.w,
-          vertical: verticalPadding?.h ?? 14.h,
+          vertical: verticalPadding?.h ?? 12.h,
         ),
       ),
-      child: Text(buttonText, style: Styles.font16whitesemiBold),
+      child: Text(buttonText, style: textStyle),
     );
   }
 }

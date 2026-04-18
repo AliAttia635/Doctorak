@@ -13,7 +13,19 @@ class Styles {
   static TextStyle font12GreyBold = TextStyle(
     fontSize: 12.sp,
     color: Colors.grey,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle font12PrimaryColorRegular = TextStyle(
+    fontSize: 12.sp,
+    color: AppColors.primaryColor,
     fontWeight: FontWeightHelper.regular,
+  );
+
+  static TextStyle font18WhiteMedium = TextStyle(
+    fontSize: 18.sp,
+    color: Colors.white,
+    fontWeight: FontWeightHelper.medium,
   );
 
   static TextStyle font18LightBlackBold = TextStyle(
