@@ -1,6 +1,6 @@
 import 'package:docdoc_1/core/di/dependency_injection.dart';
 import 'package:docdoc_1/core/routing/routes.dart';
-import 'package:docdoc_1/features/home/presentation/views/home_view.dart';
+import 'package:docdoc_1/features/home/presentation/home_view.dart';
 import 'package:docdoc_1/features/login/data/repos/login_repo.dart';
 import 'package:docdoc_1/features/login/data/repos/login_repo_implementation.dart';
 import 'package:docdoc_1/features/login/logic/cubit/login_cubit.dart';
