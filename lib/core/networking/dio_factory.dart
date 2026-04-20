@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
-  /// private constructor as I don't want to allow creating an instance of this class
   DioFactory._();
 
   static Dio? dio;
@@ -12,24 +11,44 @@ class DioFactory {
 
     if (dio == null) {
       dio = Dio();
+
       dio!
         ..options.connectTimeout = timeOut
         ..options.receiveTimeout = timeOut;
+
       addDioInterceptor();
-      return dio!;
-    } else {
-      return dio!;
     }
+
+    return dio!;
   }
 
   static void addDioInterceptor() {
-    dio?.interceptors.add(
+    dio?.interceptors.addAll([
+      _authInterceptor(),
       PrettyDioLogger(
         requestBody: true,
         requestHeader: true,
         responseHeader: true,
         responseBody: true,
       ),
+    ]);
+  }
+
+  static InterceptorsWrapper _authInterceptor() {
+    return InterceptorsWrapper(
+      onRequest: (options, handler) {
+        // to be secured later by fetching the token from secure storage
+        const token =
+            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzc2NzA1Nzc0LCJleHAiOjE3NzY3OTIxNzQsIm5iZiI6MTc3NjcwNTc3NCwianRpIjoiS3hqWVpTZkhtVHNYaklCSSIsInN1YiI6IjY4MzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.HymEwXqo19URtixCME65qZBMZWmb-897d2UOWZNwXuM";
+
+        if (token.isNotEmpty) {
+          options.headers['Authorization'] = 'Bearer $token';
+        }
+
+        options.headers['Accept'] = 'application/json';
+
+        return handler.next(options);
+      },
     );
   }
 }
