@@ -6,8 +6,9 @@ part 'home_state.freezed.dart';
 abstract class HomeState with _$HomeState {
   const factory HomeState.initial() = _Initial;
 
-  const factory HomeState.Specializationloading() = SpecializationLoading;
-  const factory HomeState.Specializationsuccess() = SpecializationSuccess;
-  const factory HomeState.Specializationfailure({required String errMessage}) =
+  const factory HomeState.specializationloading() = SpecializationLoading;
+  const factory HomeState.specializationsuccess({required int selectedIndex}) =
+      SpecializationSuccess;
+  const factory HomeState.specializationfailure({required String errMessage}) =
       SpecializationFailure;
 }

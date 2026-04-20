@@ -1,4 +1,4 @@
-
+import 'package:docdoc_1/core/networking/api_result.dart';
 import 'package:docdoc_1/features/login/data/models/login_request_body.dart';
 import 'package:docdoc_1/features/login/data/repos/login_repo.dart';
 import 'package:docdoc_1/features/login/logic/cubit/login_state.dart';
@@ -28,8 +28,9 @@ class LoginCubit extends Cubit<LoginState> {
         emit(LoginState.success(loginResponseData));
       },
       faliure: (errorHandler) {
-        emit(LoginState.error(
-            error: errorHandler.apiErrorModel.errMessage ?? ""));
+        emit(
+          LoginState.error(error: errorHandler.apiErrorModel.errMessage ?? ""),
+        );
       },
     );
   }

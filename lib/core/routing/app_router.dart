@@ -1,5 +1,7 @@
 import 'package:docdoc_1/core/di/dependency_injection.dart';
 import 'package:docdoc_1/core/routing/routes.dart';
+import 'package:docdoc_1/features/home/data/repos/home_repo_implementation.dart';
+import 'package:docdoc_1/features/home/logic/cubit/home_cubit.dart';
 import 'package:docdoc_1/features/home/presentation/home_view.dart';
 import 'package:docdoc_1/features/login/data/repos/login_repo.dart';
 import 'package:docdoc_1/features/login/data/repos/login_repo_implementation.dart';
@@ -42,7 +44,12 @@ class AppRouter {
       GoRoute(
         path: Routes.homeScreen,
         builder: (context, state) {
-          return const HomeView();
+          return BlocProvider(
+            create: (context) =>
+                HomeCubit(getit<HomeRepoImplementation>())
+                  ..getSpecializations(),
+            child: HomeView(),
+          );
         },
       ),
     ],

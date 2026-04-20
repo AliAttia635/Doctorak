@@ -55,14 +55,14 @@ extension HomeStatePatterns on HomeState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( SpecializationLoading value)?  Specializationloading,TResult Function( SpecializationSuccess value)?  Specializationsuccess,TResult Function( SpecializationFailure value)?  Specializationfailure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( SpecializationLoading value)?  specializationloading,TResult Function( SpecializationSuccess value)?  specializationsuccess,TResult Function( SpecializationFailure value)?  specializationfailure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case SpecializationLoading() when Specializationloading != null:
-return Specializationloading(_that);case SpecializationSuccess() when Specializationsuccess != null:
-return Specializationsuccess(_that);case SpecializationFailure() when Specializationfailure != null:
-return Specializationfailure(_that);case _:
+return initial(_that);case SpecializationLoading() when specializationloading != null:
+return specializationloading(_that);case SpecializationSuccess() when specializationsuccess != null:
+return specializationsuccess(_that);case SpecializationFailure() when specializationfailure != null:
+return specializationfailure(_that);case _:
   return orElse();
 
 }
@@ -80,14 +80,14 @@ return Specializationfailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( SpecializationLoading value)  Specializationloading,required TResult Function( SpecializationSuccess value)  Specializationsuccess,required TResult Function( SpecializationFailure value)  Specializationfailure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( SpecializationLoading value)  specializationloading,required TResult Function( SpecializationSuccess value)  specializationsuccess,required TResult Function( SpecializationFailure value)  specializationfailure,}){
 final _that = this;
 switch (_that) {
 case _Initial():
 return initial(_that);case SpecializationLoading():
-return Specializationloading(_that);case SpecializationSuccess():
-return Specializationsuccess(_that);case SpecializationFailure():
-return Specializationfailure(_that);case _:
+return specializationloading(_that);case SpecializationSuccess():
+return specializationsuccess(_that);case SpecializationFailure():
+return specializationfailure(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -104,14 +104,14 @@ return Specializationfailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( SpecializationLoading value)?  Specializationloading,TResult? Function( SpecializationSuccess value)?  Specializationsuccess,TResult? Function( SpecializationFailure value)?  Specializationfailure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( SpecializationLoading value)?  specializationloading,TResult? Function( SpecializationSuccess value)?  specializationsuccess,TResult? Function( SpecializationFailure value)?  specializationfailure,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial(_that);case SpecializationLoading() when Specializationloading != null:
-return Specializationloading(_that);case SpecializationSuccess() when Specializationsuccess != null:
-return Specializationsuccess(_that);case SpecializationFailure() when Specializationfailure != null:
-return Specializationfailure(_that);case _:
+return initial(_that);case SpecializationLoading() when specializationloading != null:
+return specializationloading(_that);case SpecializationSuccess() when specializationsuccess != null:
+return specializationsuccess(_that);case SpecializationFailure() when specializationfailure != null:
+return specializationfailure(_that);case _:
   return null;
 
 }
@@ -128,13 +128,13 @@ return Specializationfailure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  Specializationloading,TResult Function()?  Specializationsuccess,TResult Function( String errMessage)?  Specializationfailure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  specializationloading,TResult Function( int selectedIndex)?  specializationsuccess,TResult Function( String errMessage)?  specializationfailure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case SpecializationLoading() when Specializationloading != null:
-return Specializationloading();case SpecializationSuccess() when Specializationsuccess != null:
-return Specializationsuccess();case SpecializationFailure() when Specializationfailure != null:
-return Specializationfailure(_that.errMessage);case _:
+return initial();case SpecializationLoading() when specializationloading != null:
+return specializationloading();case SpecializationSuccess() when specializationsuccess != null:
+return specializationsuccess(_that.selectedIndex);case SpecializationFailure() when specializationfailure != null:
+return specializationfailure(_that.errMessage);case _:
   return orElse();
 
 }
@@ -152,13 +152,13 @@ return Specializationfailure(_that.errMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  Specializationloading,required TResult Function()  Specializationsuccess,required TResult Function( String errMessage)  Specializationfailure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  specializationloading,required TResult Function( int selectedIndex)  specializationsuccess,required TResult Function( String errMessage)  specializationfailure,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case SpecializationLoading():
-return Specializationloading();case SpecializationSuccess():
-return Specializationsuccess();case SpecializationFailure():
-return Specializationfailure(_that.errMessage);case _:
+return specializationloading();case SpecializationSuccess():
+return specializationsuccess(_that.selectedIndex);case SpecializationFailure():
+return specializationfailure(_that.errMessage);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -175,13 +175,13 @@ return Specializationfailure(_that.errMessage);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  Specializationloading,TResult? Function()?  Specializationsuccess,TResult? Function( String errMessage)?  Specializationfailure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  specializationloading,TResult? Function( int selectedIndex)?  specializationsuccess,TResult? Function( String errMessage)?  specializationfailure,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
-return initial();case SpecializationLoading() when Specializationloading != null:
-return Specializationloading();case SpecializationSuccess() when Specializationsuccess != null:
-return Specializationsuccess();case SpecializationFailure() when Specializationfailure != null:
-return Specializationfailure(_that.errMessage);case _:
+return initial();case SpecializationLoading() when specializationloading != null:
+return specializationloading();case SpecializationSuccess() when specializationsuccess != null:
+return specializationsuccess(_that.selectedIndex);case SpecializationFailure() when specializationfailure != null:
+return specializationfailure(_that.errMessage);case _:
   return null;
 
 }
@@ -244,7 +244,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'HomeState.Specializationloading()';
+  return 'HomeState.specializationloading()';
 }
 
 
@@ -257,33 +257,67 @@ String toString() {
 
 
 class SpecializationSuccess implements HomeState {
-  const SpecializationSuccess();
+  const SpecializationSuccess({required this.selectedIndex});
   
 
+ final  int selectedIndex;
 
-
+/// Create a copy of HomeState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$SpecializationSuccessCopyWith<SpecializationSuccess> get copyWith => _$SpecializationSuccessCopyWithImpl<SpecializationSuccess>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecializationSuccess);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is SpecializationSuccess&&(identical(other.selectedIndex, selectedIndex) || other.selectedIndex == selectedIndex));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,selectedIndex);
 
 @override
 String toString() {
-  return 'HomeState.Specializationsuccess()';
+  return 'HomeState.specializationsuccess(selectedIndex: $selectedIndex)';
 }
 
 
 }
 
+/// @nodoc
+abstract mixin class $SpecializationSuccessCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
+  factory $SpecializationSuccessCopyWith(SpecializationSuccess value, $Res Function(SpecializationSuccess) _then) = _$SpecializationSuccessCopyWithImpl;
+@useResult
+$Res call({
+ int selectedIndex
+});
 
 
+
+
+}
+/// @nodoc
+class _$SpecializationSuccessCopyWithImpl<$Res>
+    implements $SpecializationSuccessCopyWith<$Res> {
+  _$SpecializationSuccessCopyWithImpl(this._self, this._then);
+
+  final SpecializationSuccess _self;
+  final $Res Function(SpecializationSuccess) _then;
+
+/// Create a copy of HomeState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? selectedIndex = null,}) {
+  return _then(SpecializationSuccess(
+selectedIndex: null == selectedIndex ? _self.selectedIndex : selectedIndex // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
 
 /// @nodoc
 
@@ -313,7 +347,7 @@ int get hashCode => Object.hash(runtimeType,errMessage);
 
 @override
 String toString() {
-  return 'HomeState.Specializationfailure(errMessage: $errMessage)';
+  return 'HomeState.specializationfailure(errMessage: $errMessage)';
 }
 
 
