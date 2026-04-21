@@ -40,7 +40,7 @@ class DioFactory {
     return InterceptorsWrapper(
       onRequest: (options, handler) async {
         // to be secured later by fetching the token from secure storage
-        String token = await SharedPrefHelper.getString(
+        String token = await SharedPrefHelper.getSecuredString(
           SharedPrefKeys.userToken,
         );
 

@@ -40,7 +40,8 @@ class LoginCubit extends Cubit<LoginState> {
 
   Future<void> saveUserToken(String token) async {
     // Save the token to shared preferences
-    await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+    // await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
   }
 
   // Overriding the close method to dispose controllers when the cubit lifeCycle ends
