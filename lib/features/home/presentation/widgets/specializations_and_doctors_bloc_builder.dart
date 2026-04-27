@@ -23,7 +23,6 @@ class SpecializationsAndDoctorsBlocBuilder extends StatelessWidget {
       builder: (context, state) {
         final cubit = context.read<HomeCubit>();
         final selectedIndex = cubit.selectedSpecializationIndex;
-
         log("builder is called with index $selectedIndex");
         return state.maybeWhen(
           specializationloading: () {

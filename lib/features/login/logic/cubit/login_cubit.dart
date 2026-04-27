@@ -1,3 +1,5 @@
+import 'package:docdoc_1/core/helpers/constants.dart';
+import 'package:docdoc_1/core/helpers/shared_prefrences_helper.dart';
 import 'package:docdoc_1/core/networking/api_result.dart';
 import 'package:docdoc_1/features/login/data/models/login_request_body.dart';
 import 'package:docdoc_1/features/login/data/repos/login_repo.dart';
@@ -24,7 +26,8 @@ class LoginCubit extends Cubit<LoginState> {
     );
 
     responseResult.when(
-      success: (loginResponseData) {
+      success: (loginResponseData) async {
+        await saveUserToken(loginResponseData.userData?.token ?? "");
         emit(LoginState.success(loginResponseData));
       },
       faliure: (errorHandler) {
@@ -33,6 +36,12 @@ class LoginCubit extends Cubit<LoginState> {
         );
       },
     );
+  }
+
+  Future<void> saveUserToken(String token) async {
+    // Save the token to shared preferences
+    // await SharedPrefHelper.setData(SharedPrefKeys.userToken, token);
+    await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
   }
 
   // Overriding the close method to dispose controllers when the cubit lifeCycle ends

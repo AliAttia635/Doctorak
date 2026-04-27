@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:docdoc_1/core/helpers/constants.dart';
+import 'package:docdoc_1/core/helpers/shared_prefrences_helper.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
@@ -22,9 +24,9 @@ class DioFactory {
     return dio!;
   }
 
-  static void addDioInterceptor() {
+  static void addDioInterceptor() async {
     dio?.interceptors.addAll([
-      _authInterceptor(),
+      await _authInterceptor(),
       PrettyDioLogger(
         requestBody: true,
         requestHeader: true,
@@ -34,12 +36,13 @@ class DioFactory {
     ]);
   }
 
-  static InterceptorsWrapper _authInterceptor() {
+  static Future<InterceptorsWrapper> _authInterceptor() async {
     return InterceptorsWrapper(
-      onRequest: (options, handler) {
+      onRequest: (options, handler) async {
         // to be secured later by fetching the token from secure storage
-        const token =
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzc2NzA1Nzc0LCJleHAiOjE3NzY3OTIxNzQsIm5iZiI6MTc3NjcwNTc3NCwianRpIjoiS3hqWVpTZkhtVHNYaklCSSIsInN1YiI6IjY4MzEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.HymEwXqo19URtixCME65qZBMZWmb-897d2UOWZNwXuM";
+        String token = await SharedPrefHelper.getSecuredString(
+          SharedPrefKeys.userToken,
+        );
 
         if (token.isNotEmpty) {
           options.headers['Authorization'] = 'Bearer $token';
