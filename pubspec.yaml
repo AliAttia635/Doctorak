@@ -16,7 +16,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.1+1
+version: 1.0.2+1
 
 environment:
   sdk: ^3.8.0
@@ -28,47 +28,33 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  #A build system for Dart code generation and modular compilation
-
   cupertino_icons: ^1.0.8
-
+  dio: ^5.7.0
+  easy_localization: ^3.0.7
+  firebase_core: ^4.7.0
   flutter:
     sdk: flutter
-  shared_preferences: ^2.5.5
-
-  # for splash screen
-  flutter_native_splash: ^2.4.3
-  # for adapting screen and font size.
-  flutter_screenutil: ^5.9.3
-  # An SVG rendering and widget library for Flutter, which allows painting
-  flutter_svg: ^2.0.16
-  # State management
   flutter_bloc: ^9.1.1
-  # Code generator (mainly used with cubit & retrofit)
+  flutter_native_splash: ^2.4.3
+  flutter_screenutil: ^5.9.3
+  flutter_secure_storage: ^10.0.0
+  flutter_svg: ^2.0.16
   freezed: ^3.2.5
   freezed_annotation: ^3.1.0
-  # # for dependency injection
   get_it: ^9.2.1
-  # for screen navigation
   go_router: ^17.2.1
-  # localization
-  easy_localization: ^3.0.7
   intl: ^0.20.2
-  # Automatically generate code for converting to and from JSON by annotating Dart classes
-  json_serializable: ^6.7.1
+  intl_phone_field: ^3.2.0
   json_annotation: ^4.9.0
-  # Networking
-  dio: ^5.7.0
+  json_serializable: ^6.7.1
+  pretty_dio_logger: ^1.4.0
   retrofit: ^4.4.1
   retrofit_generator: ^10.2.5
-  pretty_dio_logger: ^1.4.0
-  # international phone picker
-  intl_phone_field: ^3.2.0
-  firebase_core: ^4.7.0
+  shared_preferences: ^2.5.5
 
 dev_dependencies:
-  flutter_lints: ^6.0.0
   build_runner: ^2.4.14
+  flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
 
